@@ -7,17 +7,9 @@ import { errorMiddleware } from './error/error.js';
 import reservationRouter from './routes/reservationRoute.js';
 
 const app = express();
-dotenv.config({ path: "./config/config.env" });
+dotenv.config();
 
 const __dirname = path.resolve();
-
-
-
-app.use(cors({
-    origin: 'http://localhost:3000',
-    methods: ["POST"],
-    credentials: true,
-}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // Corrected 'extended'
